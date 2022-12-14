@@ -1,0 +1,42 @@
+from model.weapon import *
+
+class Cat:
+   
+   def __init__(self, pseudo, classe):
+      self.pseudo = pseudo
+      self.classe = classe
+      self.weapon = None
+         
+      if self.classe == "Tank":
+         self.health = 150
+         self.attackdmg = 3
+      elif self.classe == "Guerrier":
+         self.health = 100
+         self.attackdmg = 5
+      elif self.classe == "Mage":
+         self.health = 80
+         self.attackdmg = 8      
+      
+   def get_pseudo(self):
+      return self.pseudo 
+   def get_classe(self):
+      return self.pseudo 
+   def get_health(self):
+      return self.pseudo  
+   def get_attackdmg(self):
+      return self.attackdmg
+
+   def damage(self, damage):
+      if damage + Weapon(self.damage) >= self.health + Shield(self.shield):
+         self.health = 0
+         print("Votre chat est mort...")
+      else:
+         self.health -= damage + Weapon(self.damage) - Shield(self.shield)
+         print("Votre chat a subit", damage, "dégats.")
+         print("Vous avez désormais", self.health, "points de vie.\n")
+         
+   def attack_player(self, targeted_cat):
+      targeted_cat.damage(self.attackdmg)
+      print("Vous attaquez le chat", targeted_cat, "!")
+      print("Vous lui avez infligé", self.attackdmg, "dégats !")
+      print(targeted_cat, "n'a plus que", targeted_cat.self.health)
