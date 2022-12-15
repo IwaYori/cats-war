@@ -27,11 +27,11 @@ class Cat:
       return self.attackdmg
 
    def damage(self, damage):
-      if damage + Weapon(self.damage) >= self.health + Shield(self.shield):
+      if damage + Weapon.get_damage(self) >= self.health + Shield.get_shieldpower(self):
          self.health = 0
          print("Votre chat est mort...")
       else:
-         self.health -= damage + Weapon(self.damage) - Shield(self.shield)
+         self.health -= damage + Weapon.get_damage(self) - Shield.get_shieldpower(self)
          print("Votre chat a subit", damage, "dégats.")
          print("Vous avez désormais", self.health, "points de vie.\n")
          
