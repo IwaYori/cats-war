@@ -31,7 +31,7 @@ class Cat:
          self.health = 0
          print("Votre chat est mort...")
       else:
-         self.health -= damage + Weapon.get_damage(self) - Shield.get_shieldpower(self)
+         self.health -= damage - Weapon.get_damage(self) + Shield.get_shieldpower(self)
          print("Votre chat a subit", damage, "dégats.")
          print("Vous avez désormais", self.health, "points de vie.\n")
          
