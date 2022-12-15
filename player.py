@@ -8,7 +8,7 @@ class Cat:
       self.weapon = None
          
       if self.classe == "Tank":
-         self.health = 150
+         self.health = 140
          self.attackdmg = 3
       elif self.classe == "Guerrier":
          self.health = 100
