@@ -6,6 +6,7 @@ class Cat:
       self.pseudo = pseudo
       self.classe = classe
       self.weapon = None
+      self.backweapon = []
          
       if self.classe == "Tank":
          self.health = 140
@@ -15,7 +16,7 @@ class Cat:
          self.attackdmg = 5
       elif self.classe == "Mage":
          self.health = 80
-         self.attackdmg = 8      
+         self.attackdmg = 8  
       
    def get_pseudo(self):
       return self.pseudo 
@@ -39,4 +40,10 @@ class Cat:
       targeted_cat.damage(self.attackdmg)
       print("Vous attaquez le chat", targeted_cat, "!")
       print("Vous lui avez infligé", self.attackdmg, "dégats !")
-      print(targeted_cat, "n'a plus que", targeted_cat.self.health)
+      print(targeted_cat, "n'a plus que", targeted_cat.health)
+      
+   def swap_inv(self, targeteditem):
+      self.backweapon.append(self.weapon)
+      self.weapon = targeteditem
+      
+      
